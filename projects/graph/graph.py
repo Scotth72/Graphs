@@ -159,7 +159,26 @@ class Graph:
 
         This should be done using recursion.
         """
-        pass  # TODO
+        # visited=None
+
+        # if type(starting_vertex) != list:
+        #     starting_vertex = [starting_vertex]
+
+        # if visited is None:
+        #     visited = set()
+
+        # v = starting_vertex[-1]
+
+        # if v not in visited:
+        #     visited.add(v)
+
+        #     if v == destination_vertex:
+        #         return starting_vertex
+
+        #     else:
+        #         for next_v in self.get_neighbors(v):
+        #             next_path = list([next_v])
+        pass
 
 
 if __name__ == '__main__':
