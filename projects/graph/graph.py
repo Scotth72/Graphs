@@ -118,8 +118,12 @@ class Graph:
                     visited.add(v)
 
                 for next_v in self.get_neighbors(v):
-                    next_path = [current_path, next_v]
+                    # next_path = [current_path, next_v] -- what I tried
+                    # new_path = list(path) copy the list, --seen from lecture
+                    next_path = list(current_path)
+                    next_path.append(next_v)
                     q.enqueue(next_path)
+        return None
 
     def dfs(self, starting_vertex, destination_vertex):
         """
@@ -127,7 +131,25 @@ class Graph:
         starting_vertex to destination_vertex in
         depth-first order.
         """
-        pass  # TODO
+        stack = Stack()
+        stack.push([starting_vertex])
+        visited = set()
+
+        while stack.size() > 0:
+            current_path = stack.pop()
+            v = current_path[-1]
+
+            if v not in visited:
+                if v == destination_vertex:
+                    return current_path
+
+                else:
+                    visited.add(v)
+                    for next_v in self.get_neighbors(v):
+                        next_path = list([next_v])
+                        stack.push(next_path)
+
+        return None
 
     def dfs_recursive(self, starting_vertex, destination_vertex):
         """
