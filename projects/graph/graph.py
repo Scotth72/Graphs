@@ -67,7 +67,7 @@ class Graph:
             if v not in visited:
                 visited.add(v)
 
-                print(f"Visited {v}")
+                print(v)
 
                 for next_vert in self.get_neighbors(v):
                     stack.push(next_vert)
